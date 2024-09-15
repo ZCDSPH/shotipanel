@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝐒𝐇𝐎𝐓𝐈 𝐀𝐃𝐃𝐈𝐍𝐆 𝐏𝐀𝐍𝐄𝐋</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://i.ibb.co/NjK2XyL/photo-1672679980316-cc9b7c93fd82.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);                 backdrop-filter: blur(1px);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 400px;
+            width: 90%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .response-container {
+            margin-top: 20px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            color: #ff6f6f;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background: #1e1e1e;
+            cursor: pointer;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background: #333;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                border-radius: 8px;
+                max-width: 90%;
+            }
+            h1 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>𝐒𝐇𝐎𝐓𝐈 𝐀𝐃𝐃𝐈𝐍𝐆 𝐏𝐀𝐍𝐄𝐋</h1>
+        <form id="videoForm">
+            <label for="videoLink">𝐓𝐓 𝐕𝐈𝐃 𝐋𝐈𝐍𝐊:</label>
+            <input type="text" id="videoLink" name="videoLink" required>
+            <input type="submit" value="𝐒𝐔𝐁𝐌𝐈𝐓">
+        </form>
+        <div class="response-container">
+            <p id="responseMessage"></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('videoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const videoLink = document.getElementById('videoLink').value;
+            fetch('/addShoti', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ videoLink })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('responseMessage').innerText = data.message;
+                document.querySelector('.response-container').style.display = 'block';
+            })
+            .catch(error => {
+                document.getElementById('responseMessage').innerText = 'Error: ' + error.message;
+                document.querySelector('.response-container').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
