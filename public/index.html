@@ -3,91 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝐒𝐇𝐎𝐓𝐈 𝐀𝐃𝐃𝐈𝐍𝐆 𝐏𝐀𝐍𝐄𝐋</title>
+    <title>VIP SHOTI ADDING PANEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background: url('https://i.ibb.co/NjK2XyL/photo-1672679980316-cc9b7c93fd82.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(135deg, #1b1b1b, #141414);
+            overflow: hidden;
+            color: #fff;
         }
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);                 backdrop-filter: blur(1px);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 400px;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 30px;
+            border-radius: 15px;
             width: 90%;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .response-container {
-            margin-top: 20px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            color: #ff6f6f;
+            max-width: 400px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease;
             text-align: center;
+            z-index: 2;
         }
         h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
             margin-bottom: 20px;
-            color: #e0e0e0;
-            font-size: 1.5rem;
-            text-align: center;
+            color: #ffcc00;
+            letter-spacing: 1.5px;
         }
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #e0e0e0;
         }
-        input[type="text"], input[type="submit"] {
-            padding: 10px;
-            margin-top: 10px;
+        input[type="text"] {
             width: 100%;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            margin: 10px 0 20px;
+            border-radius: 10px;
+            border: none;
+            background: #333;
             color: #fff;
-            box-sizing: border-box;
+            transition: all 0.3s ease;
+            outline: none;
+            font-weight: 400;
+        }
+        input[type="text"]:focus {
+            background: #444;
         }
         input[type="submit"] {
-            background: #1e1e1e;
-            cursor: pointer;
+            padding: 12px;
+            width: 100%;
             border: none;
+            border-radius: 10px;
+            background: #ffcc00;
+            color: #000;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         input[type="submit"]:hover {
-            background: #333;
+            background: #e6b800;
+            transform: scale(1.05);
+        }
+        .response-container {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(255, 204, 0, 0.1);
+            color: #ff6f6f;
+            font-weight: 600;
+            animation: fadeIn 0.8s ease;
+        }
+        .heart {
+            position: absolute;
+            color: #ff6b81;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            animation: fall 5s infinite ease-in-out;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) scale(0.5) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) scale(1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         @media (max-width: 600px) {
             .container {
-                padding: 15px;
-                border-radius: 8px;
-                max-width: 90%;
+                padding: 20px;
+                border-radius: 10px;
             }
             h1 {
-                font-size: 1.25rem;
+                font-size: 1.5rem;
+            }
+            input[type="text"], input[type="submit"] {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
+    <div class="heart" style="left: 20%; animation-duration: 4s;">❤️</div>
+    <div class="heart" style="left: 50%; animation-duration: 6s;">💖</div>
+    <div class="heart" style="left: 70%; animation-duration: 5s;">💜</div>
+    <div class="heart" style="left: 10%; animation-duration: 7s;">💘</div>
+    <div class="heart" style="left: 80%; animation-duration: 3.5s;">💗</div>
+
     <div class="container">
-        <h1>𝐒𝐇𝐎𝐓𝐈 𝐀𝐃𝐃𝐈𝐍𝐆 𝐏𝐀𝐍𝐄𝐋</h1>
+        <h1>SHOTI ADDING PANEL</h1>
         <form id="videoForm">
-            <label for="videoLink">𝐓𝐓 𝐕𝐈𝐃 𝐋𝐈𝐍𝐊:</label>
-            <input type="text" id="videoLink" name="videoLink" required>
-            <input type="submit" value="𝐒𝐔𝐁𝐌𝐈𝐓">
+            <label for="videoLink">TT VID LINK:</label>
+            <input type="text" id="videoLink" name="videoLink" placeholder="PASTE HERE" required>
+            <input type="submit" value="ADD VIDEO">
         </form>
-        <div class="response-container">
+        <div class="response-container" style="display: none;">
             <p id="responseMessage"></p>
         </div>
     </div>
@@ -97,15 +145,14 @@
             const videoLink = document.getElementById('videoLink').value;
             fetch('/addShoti', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ videoLink })
             })
             .then(response => response.json())
             .then(data => {
                 document.getElementById('responseMessage').innerText = data.message;
                 document.querySelector('.response-container').style.display = 'block';
+                document.getElementById('videoForm').reset();
             })
             .catch(error => {
                 document.getElementById('responseMessage').innerText = 'Error: ' + error.message;
